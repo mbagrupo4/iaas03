@@ -4,7 +4,7 @@ trigger:
 pool:
   name: Default # Nome do agent pool
   demands:
-    - Agent.Name -equals LML001  # 🔁 Força o uso do agente específico - substitua pelo nome do Agent criado
+    - Agent.Name -equals agentnuvem2  # 🔁 Força o uso do agente específico - substitua pelo nome do Agent criado
 
   #vmImage: 'windows-latest'
 
@@ -27,7 +27,7 @@ stages:
     - task: AzureCLI@2
       displayName: 'Criar Resource Group'
       inputs:
-        azureSubscription: 'SCll01'  # 🔁 Substitua pelo nome do Service Connection criado
+        azureSubscription: 'mbanuvem'  # 🔁 Substitua pelo nome do Service Connection criado
         scriptType: 'ps'
         scriptLocation: 'inlineScript'
         inlineScript: |
@@ -37,7 +37,7 @@ stages:
       displayName: 'Deploy ARM Template'
       inputs:
         deploymentScope: 'Resource Group'
-        azureResourceManagerConnection: 'SCll01'  # 🔁 Substitua pelo nome do Service Connection criado
+        azureResourceManagerConnection: 'mbanuvem'  # 🔁 Substitua pelo nome do Service Connection criado
         action: 'Create Or Update Resource Group'
         resourceGroupName: '$(resourceGroupName)'
         location: '$(location)'
@@ -57,7 +57,7 @@ stages:
     - task: AzureCLI@2
       displayName: 'Executar CustomScriptExtension'
       inputs:
-        azureSubscription: 'SCll01'  # 🔁 Substitua pelo nome do Service Connection criado
+        azureSubscription: 'mbanuvem'  # 🔁 Substitua pelo nome do Service Connection criado
         scriptType: 'ps'
         scriptLocation: 'inlineScript'
         inlineScript: |
