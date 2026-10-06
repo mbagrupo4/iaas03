@@ -18,10 +18,10 @@
             "value": "SuaSenhaSeguraAqui123!"
         },
         "vmSku": {
-            "value": "Standard_D2s_v3"
+            "value": "Standard_B2ls_v2"
         },
         "windowsOSVersion": {
-            "value": "2022-datacenter-azure-edition"
+            "value": "2025-datacenter-azure-edition"
         }
     }
 }
